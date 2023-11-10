@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+</head>
+<body>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="button" value="提交">
+<script src="common.js"></script>
+
+<script>
+    var inputs = document.querySelectorAll('input[type=text]');
+
+    var i = 0, len = inputs.length;
+    for(;i<len;i++){
+        var input=inputs[i];
+        input.onfocus=function () {
+            this.style.backgroundColor='lightgray';
+        }
+        input.onblur=function () {
+            this.style.backgroundColor='';
+        }
+    }
+
+</script>
+
+</body>
+</html>

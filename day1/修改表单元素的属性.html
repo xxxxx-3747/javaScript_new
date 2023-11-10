@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input id="input" type="button" value="切换图片"><br>
+<img id="img" src="images/a.jpeg" alt="" width="600px">
+
+<script>
+    //获取需要的元素
+    var inputObj=document.getElementById('input');
+    var imgObj=document.getElementById('img');
+
+    //点击按钮修改样式
+    inputObj.onclick=function () {
+        inputObj.value='修改后的点击按钮';
+        imgObj.src='images/b.jpeg';
+    }
+
+</script>
+
+</body>
+</html>

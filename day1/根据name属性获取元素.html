@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="frm" action="1.php">
+    <input type="text" name="usernamne"></br>
+    <input type="text" name="pwd"></br>
+
+    <input type="radio" name="sex"></br>
+    <input type="radio" name="sex"></br>
+    <input type="submit" value="登录"></br>
+</form>
+
+<input type="text" name="usernamne"></br>
+
+<script>
+    // var  frm=document.getElementById('frm');
+    // //获取form中所有的input标签
+    //
+    // var inputs=frm.getElementsByTagName('input');
+    //
+    // //console.log(inputs);
+    //
+    // //根据name获取元素
+    // var sexs=document.getElementsByName('sex');
+    // console.log(sexs);
+
+    //根据选择器获取元素
+    var frm=document.querySelector('#frm');
+    var  txt=frm.querySelectorAll('input');
+    console.log(txt);
+    var input_txt=frm.querySelectorAll('input[type=text]');
+    console.log(input_txt);
+</script>
+
+</body>
+</html>

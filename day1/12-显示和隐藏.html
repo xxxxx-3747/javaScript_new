@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dv {
+            width: 300px;
+            height: 200px;
+            background-color: firebrick;
+        }
+        .show {
+            display: block;
+        }
+
+        .hid {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<input id='input' type="button" value="隐藏">
+<div id="dv" class="show"></div>
+
+<script>
+    //获取元素
+    var inputObj=document.getElementById('input');
+    var dvObj=document.getElementById('dv');
+    var flag=false;
+
+    //点击按钮修改样式
+    inputObj.onclick=function () {
+
+        if(flag==false){
+            inputObj.value='显示';
+            dvObj.className='hid';
+            flag=true;
+        }else{
+            inputObj.value='隐藏';
+            dvObj.className='show';
+            flag=false;
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box" id="box"></div>
+
+<script src="common.js"></script>
+<script>
+
+    var box = document.getElementById('box');
+    box.innerHTML += '<p>我是一个p标签</p>';
+    var data = ['zs', 'ls', 'cx'];
+    // var ulObj=document.createElement('ul');
+
+    //方法一：
+    // box.innerHTML += '<ul>';
+    // data.forEach(function (item, index) {
+    //     box.innerHTML += '<li>' + item + '</li>';
+    // });
+    // box.innerHTML += '</ul>';
+
+    //方法二：
+    var arr=[];
+    arr.push('<ul>');
+    data.forEach(function (item,index) {
+        arr.push('<li>' + item + '</li>');
+    });
+    arr.push('</ul>');
+    console.log(arr);
+
+    box.innerHTML=arr.join('');
+</script>
+</body>
+</html>

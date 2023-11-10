@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="btn" value="关灯">
+
+<script src="common.js"></script>
+<script>
+    var btn = $('btn');
+    var flag = false;
+    btn.onclick = function () {
+        if (flag==false) {
+            //需要关灯
+            btn.value='开灯';
+            document.body.style.backgroundColor='black';
+            flag=true;
+        } else {
+            btn.value='关灯';
+            document.body.style.backgroundColor='';
+            flag=false;
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

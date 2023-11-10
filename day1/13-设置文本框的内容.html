@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text" name=""><br>
+<input type="text" name=""><br>
+<input type="text" name=""><br>
+<input type="text" name=""><br>
+<input type="text" name=""><br>
+<input type="text" name=""><br>
+<input type="text" name=""><br>
+<input type="radio" name=""><br>
+<input type="button" id="btn" value="按钮">
+
+<script src="common.js"></script>
+<script>
+    //获取所有的文本框
+    var texts = document.getElementsByTagName('input');
+
+    var i = 0, len = texts.length;
+    for (; i < len; i++) {
+        var text = texts[i];
+        if (text.type === 'text') {
+            text.value = i + 1;
+        }
+    }
+
+    //点击按钮获取文本框中的内容
+    var buttonObj = document.getElementById('btn');
+
+    //方法一：
+    // buttonObj.onclick=function () {
+    //     var i = 0, len = texts.length;
+    //     var str='';
+    //     for (; i < len; i++) {
+    //         var text = texts[i];
+    //         if (text.type === 'text') {
+    //             str+=text.value+'|';
+    //         }
+    //     }
+    //     console.log(str);
+    // }
+
+    //方法二：借用数组
+    buttonObj.onclick = function () {
+        var i = 0, len = texts.length;
+        var arr=[]
+        for(;i<len;i++){
+            var text=texts[i];
+            if(text.type==='text'){
+                arr.push(text.value);
+            }
+        }
+        var str=arr.join('|');
+        console.log(str);
+
+    }
+
+</script>
+
+</body>
+</html>

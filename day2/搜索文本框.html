@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .gary {
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+<input type="text" id="txt" class="gary" value="请输入需要搜索的商品"><br>
+<input type="button" id="btn" value="搜索">
+
+<script src="common.js"></script>
+<script>
+    //获取需要的元素
+    var txtObj = $('txt');
+    var btnObj = $('btn');
+
+    //文本框获取焦点的时候判断
+    txtObj.onfocus=function () {
+        if(txtObj.value=='请输入需要搜索的商品'){
+            txtObj.value='';
+            txtObj.className='';
+        }
+    }
+    txtObj.onblur=function () {
+        if(txtObj.value.length == 0){
+            txtObj.value='请输入需要搜索的商品';
+            txtObj.className='gary';
+        }else {
+            txtObj.className='';
+        }
+    }
+</script>
+
+</body>
+</html>

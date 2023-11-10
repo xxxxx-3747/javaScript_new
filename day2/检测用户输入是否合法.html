@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .bg {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+<form action="1.php">
+    <input type="text" id="username"><br>
+    <input type="text" id="pwd"><br>
+    <input type="button" id="btn" value="提交">
+</form>
+
+<script>
+    //获取元素
+    var username=document.getElementById('username');
+    var pwd=document.getElementById('pwd');
+    var btn=document.getElementById('btn');
+
+    btn.onclick=function () {
+        //判断用户名是否合法
+        if(username.value.length<3 || username.value.length>6){
+            username.className='bg';
+            return false;
+        }else{
+            username.className='';
+        }
+        if(pwd.value.length<6 || pwd.value.length>8){
+            pwd.className='bg';
+            return false;
+        }else{
+            pwd.className='';
+        }
+    }
+</script>
+
+</body>
+</html>

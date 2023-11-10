@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*设置表格的样式*/
+        .box table {
+            /*border: 1px;*/
+            /*cellSpacing: 0;*/
+            border-collapse: collapse;
+            /*background-color: lightgray;*/
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="box"></div>
+<script src="common.js"></script>
+<script>
+    var bodyData = [
+        {name: 'zs', class: '语文', grade: '90'},
+        {name: 'ls', class: '语文', grade: '70'},
+        {name: 'ww', class: '语文', grade: '30'},
+        {name: 'zs', class: '数学', grade: '60'},
+        {name: 'ls', class: '数学', grade: '22'},
+        {name: 'ww', class: '数学', grade: '45'},
+        {name: 'zs', class: '体育', grade: '100'}
+    ];
+
+    var headDate = ['姓名', '课程', '成绩', '操作'];
+
+    var boxObj = document.getElementById('box');
+    //动态生成表头
+    var table = document.createElement('table');
+    boxObj.appendChild(table);
+    table.border = '1px';
+    table.cellSpacing = 0;
+    table.style.textAlign = 'center';
+
+
+    var thead = document.createElement('thead');
+    table.appendChild(thead);
+
+    var tr = document.createElement('tr');
+    thead.appendChild(tr);
+    tr.backgroundColor = 'lightgray';
+
+
+    headDate.forEach(function (item) {
+        var th = document.createElement('th');
+        setInnerText(th, item);
+        tr.appendChild(th);
+        th.border = '1px';
+        th.width = '150px';
+        th.height = '50px';
+        th.bgColor = 'lightgray';
+    });
+
+    //动态生成表格
+    var tbody = document.createElement('tbody');
+    table.appendChild(tbody);
+
+    bodyData.forEach(function (item) {
+
+        var tr = document.createElement('tr');
+        tbody.appendChild(tr);
+
+        for (key in item) {
+            var td = document.createElement('td');
+            setInnerText(td, item[key]);
+            tr.appendChild(td);
+        }
+
+        var td = document.createElement('td');
+        tr.appendChild(td);
+
+        var a = document.createElement('a');
+        setInnerText(a,'删除');
+        td.appendChild(a);
+        a.href='javaScript:void(0)';
+
+        a.onclick=aclick;
+    });
+
+   function aclick() {
+        //提示是否删除
+        var rem=confirm('是否确定删除');
+        if(rem){
+            var tr=this.parentNode.parentNode;
+            tbody.removeChild(tr);
+
+        }
+
+    };
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dv {
+            width: 200px;
+            height: 200px;
+            background-color: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+<div id="dv"></div>
+<input type="button" id="btn" value="修改样式">
+<script src="common.js"></script>
+<script>
+    var btn=document.getElementById('btn');
+    btn.onclick=function () {
+        var dvObj=document.getElementById('dv');
+        dvObj.style.width='400px';
+        dvObj.style.height='400px';
+        dvObj.style.position='absolute';
+        dvObj.style.left='500px';
+        dvObj.style.top='200px';
+    }
+</script>
+
+</body>
+</html>

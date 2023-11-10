@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .mv {
+            position: relative;
+            top: 50px;
+            left: 100px;
+
+        }
+
+        .mv .hb {
+
+        }
+
+        .mv .hb span {
+            display: block;
+            /*float: right;*/
+            float: left;
+            width: 100px;
+            height: 50px;
+            background-color: palevioletred;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .mv .hb span.current {
+            display: block;
+            /*float: right;*/
+            float: left;
+            width: 100px;
+            height: 50px;
+            background-color: purple;
+        }
+
+        .mv .bd {
+            width: 400px;
+            height: 400px;
+            background-color: cornflowerblue;
+
+        }
+
+        .mv .bd div {
+            width: 400px;
+            height: 400px;
+            background-color: cornflowerblue;
+            display: none;
+
+        }
+
+        .mv .bd div.current {
+            width: 400px;
+            height: 400px;
+            background-color: rebeccapurple;
+            display: block;
+
+        }
+    </style>
+</head>
+<body>
+
+<div id="mv" class="mv">
+    <div id="hb" class="hb">
+        <span class="current">娱乐</span>
+        <span>文本</span>
+        <span>体育</span>
+        <span>游戏</span>
+    </div>
+
+    <div id="bd" class="bd">
+        <div class="current">我是娱乐模块</div>
+        <div>我是文本模块</div>
+        <div>我是体育模块</div>
+        <div>我是游戏模块</div>
+    </div>
+</div>
+
+<script src="common.js"></script>
+<script>
+    //获取标题
+    var hbObj = document.getElementById('hb');
+    var spans = hbObj.querySelectorAll('span');
+    //获取文本
+    var bdObj = document.getElementById('bd');
+    var divs = bdObj.querySelectorAll('div');
+
+    //设置表头样式
+    var i = 0, len = spans.length;
+    var j = 0, lens = divs.length;
+    for (; i < len; i++) {
+        var span = spans[i];
+        span.setAttribute('index',i);
+        span.onmouseover = function () {
+            for (var j = 0; j < len; j++) {
+                spans[j].className = '';
+            }
+            this.className = 'current';
+            // console.log(this.getAttribute('index'));
+            //设置文本样式
+            //清除所有的文本的样式
+            for(i=0;i<lens;i++){
+                divs[i].className='';
+            }
+            //设置该文本的样式
+            divs[this.getAttribute('index')].className='current';
+
+
+        }
+        span.onmouseout = function () {
+            this.className = 'current';
+        }
+    }
+
+
+</script>
+
+
+</body>
+</html>

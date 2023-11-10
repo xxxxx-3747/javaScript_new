@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" name="" id="txt" ><br>
+<input type="button" id="btn" value="禁用">
+<script>
+    //获取元素
+
+    var btnObj = document.getElementById('btn');
+    var txtObj = document.getElementById('txt');
+    btnObj.onclick = function () {
+        //点击按钮禁用文本框
+        txtObj.disabled = true;
+    }
+</script>
+
+
+</body>
+
+</html>

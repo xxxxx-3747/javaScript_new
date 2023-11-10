@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .dv{
+            background-color: royalblue;
+        }
+    </style>
+</head>
+<body>
+
+<ul id="ul">
+    <li>烤包子</li>
+    <li>烤肉</li>
+    <li>烤乳鸽</li>
+    <li>羊腿</li>
+    <li>羊腰子</li>
+    <li>羊蝎子</li>
+    <li>羊肝</li>
+    <li>呼啦羊蹄</li>
+</ul>
+
+<script src="common.js"></script>
+<script>
+    var ulObj = document.getElementById('ul');
+    var list = ulObj.querySelectorAll('li');
+
+    var i = 0, len = list.length;
+    var old='';
+    for (; i < len; i++) {
+        var liObj=list[i];
+
+        if (i % 2 == 0) {
+            list[i].style.backgroundColor='royalblue';
+        } else {
+            list[i].style.backgroundColor='';
+        }
+
+        liObj.onmouseover=function () {
+            old=this.style.backgroundColor;
+            this.style.backgroundColor='yellow';
+        }
+
+        liObj.onmouseout=function () {
+            this.style.backgroundColor=old;
+        }
+    }
+
+</script>
+
+</body>
+</html>

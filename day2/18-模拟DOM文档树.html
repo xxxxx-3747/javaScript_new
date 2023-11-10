@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    //创建一个节点
+    function setNode(option) {
+        this.id = option.id || '';
+        this.className = option.className;
+        this.nodeType = option.nodeType || 1;
+        this.nodeName = option.nodeName || '';
+        this.nodeValue = option.nodeValue || null;
+        this.children = [];
+    }
+
+    //创建一个HTML标签
+    var HTML = new setNode({
+        nodeName: 'HTML'
+    })
+    //创建一个HEAD标签
+    var HEAD = new setNode({
+        nodeName: 'HEAD'
+    })
+    //创建一个BODY标签
+    var BODY = new setNode({
+        nodeName: 'BODY'
+    })
+    //HEAD和BODY添加在HTML中
+    HTML.children.push(HEAD);
+    HTML.children.push(BODY);
+    //创建一个DIV标签
+    var DIV = new setNode({
+        nodeName: 'DIV'
+    })
+    //创建一个P标签
+    var P = new setNode({
+        nodeName: 'P'
+    })
+    //DIV和P添加在BODY中
+    BODY.children.push(DIV);
+    BODY.children.push(P);
+
+    console.dir(HTML);
+    console.dir(BODY);
+
+
+</script>
+
+</body>
+</html>

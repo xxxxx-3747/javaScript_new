@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .menu {
+            position: relative;
+            top: 50px;
+            left: 100px;
+        }
+
+        .menu ul {
+
+        }
+
+        .menu ul li {
+            width: 60px;
+            height: 40px;
+            background-color: cornflowerblue;
+            float: left;
+            text-align: center;
+            line-height: 40px;
+            margin-left: 5px;
+            list-style: none;
+        }
+
+        .menu ul li a {
+            color: #000000;
+            text-decoration: none;
+        }
+        .menu ul li.current {
+            background-color: fuchsia;
+        }
+    </style>
+</head>
+<body>
+
+<div class="menu" id="menu">
+    <ul>
+        <li class="current"><a href="javaScript:void[0]">百度</a></li>
+        <li><a href="javaScript:void[0]">搜狗</a></li>
+        <li><a href="javaScript:void[0]">火狐</a></li>
+        <li><a href="javaScript:void[0]">谷歌</a></li>
+        <li><a href="javaScript:void[0]">IE</a></li>
+    </ul>
+</div>
+
+<script src="common.js"></script>
+<script>
+    var menu = document.getElementById('menu');
+
+    var ulObj = menu.children[0];
+    // console.log(ulObj);
+    var list = ulObj.querySelectorAll('li');
+
+    var i=0,len=list.length;
+    for(;i<len;i++){
+        var liObj=list[i];
+        liObj.onclick=onListClick;
+    }
+
+    //点击函数
+    function onListClick() {
+        for(i=0;i<len;i++){
+            list[i].className='';
+        }
+        this.className='current';
+    }
+
+</script>
+
+</body>
+</html>

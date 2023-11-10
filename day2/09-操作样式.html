@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: rosybrown;
+        }
+    </style>
+</head>
+<body>
+<div id="box" class="box"></div>
+<input type="button" id="btn1" value="设置样式">
+<input type="button" id="btn2" value="删除样式">
+
+<script>
+    var  boxObj=document.getElementById('box');
+    var  btn1Obj=document.getElementById('btn1');
+    var  btn2Obj=document.getElementById('btn2');
+
+    btn2Obj.onclick=function () {
+        boxObj.className='';
+    }
+
+    btn1Obj.onclick=function () {
+        boxObj.style.width="200px";
+        boxObj.style.height="200px";
+        boxObj.style.backgroundColor="rosybrown";
+    }
+</script>
+
+
+</body>
+</html>

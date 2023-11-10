@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="ul">
+    <li>烤包子</li>
+    <li>烤肉</li>
+    <li>烤乳鸽</li>
+    <li>羊腿</li>
+    <li>羊腰子</li>
+    <li>羊蝎子</li>
+    <li>羊肝</li>
+    <li>呼啦羊蹄</li>
+</ul>
+
+<script src="common.js"></script>
+<script>
+    //获取第一个子元素
+    var firstChildren=getFirstElementChild($('ul'));
+    var lastChildren=getLastElementChild($('ul'));
+
+    console.log(firstChildren);
+    console.log(lastChildren);
+</script>
+
+</body>
+</html>

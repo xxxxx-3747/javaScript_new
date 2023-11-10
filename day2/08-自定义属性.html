@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <div id="box" usernameId="cx"> cx </div>
+ <a href="#">删除</a>
+
+ <script src="common.js"></script>
+ <script>
+     //获取元素的自定义属性
+     var boxObj=$('box');
+     console.log(boxObj.getAttribute('usernameId'));
+
+     //设置元素的自定义属性
+     boxObj.setAttribute('sex','man');
+     boxObj.setAttribute('age','30');
+     console.log(boxObj.getAttribute('sex'));
+     console.log(boxObj.getAttribute('age'));
+
+     //删除元素的自定义属性
+     boxObj.removeAttribute('age');
+     console.log(boxObj.getAttribute('age'));
+
+ </script>
+
+</body>
+</html>

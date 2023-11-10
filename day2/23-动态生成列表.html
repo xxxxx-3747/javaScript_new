@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box" id="box"></div>
+
+<script src="common.js"></script>
+<script>
+  var data=[
+    {key:'橘子',num:1},
+    {key:'橘子',num:1},
+    {key:'橘子',num:1},
+    {key:'橘子',num:1},
+    {key:'橘子',num:1},
+    {key:'橘子',num:1},
+    {key:'橘子',num:1},
+    {key:'橘子',num:1},
+    {key:'橘子',num:1},
+    {key:'橘子',num:1},
+    {key:'橘子',num:1}
+  ];
+
+  //动态生成列表
+  //在div中添加ul，在ul中添加li
+  var box=document.getElementById('box');
+  var ulObj=document.createElement('ul');
+  box.appendChild(ulObj);
+
+  var i=0,len=data.length;
+  for(;i<len;i++){
+      var list=document.createElement('li');
+      setInnerText(list,data[i].key);
+      ulObj.appendChild(list);
+  }
+
+
+
+
+</script>
+</body>
+</html>
