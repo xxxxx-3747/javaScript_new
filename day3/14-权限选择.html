@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        select {
+            width: 200px;
+            height: 300px;
+            background-color: cornflowerblue;
+        }
+
+        input {
+        }
+    </style>
+</head>
+<body>
+<select id="sel" class="sel" multiple="multiple">
+    <option>增加</option>
+    <option>删除</option>
+    <option>查看</option>
+    <option>修改</option>
+</select>
+
+<input type="button" id="bt1" value=">>">
+<input type="button" id="bt2" value="<<">
+<input type="button" id="bt3" value=">">
+<input type="button" id="bt4" value="<">
+
+<select id="sel1" class="sel" multiple="multiple"></select>
+
+<script src="common.js"></script>
+<script>
+    var sel = $('sel');
+    var sel1 = $('sel1');
+    var i = 0, len = sel.children.length;
+    var len1 = sel1.children.length;
+    //全部移动
+    $('bt1').onclick = function () {
+        for (; i < len; i++) {
+            sel1.appendChild(sel.children[0]);
+        }
+    }
+    // 全不选
+    $('bt2').onclick = function () {
+        for (; i < len1; i++) {
+            sel.appendChild(sel1.children[0]);
+        }
+    }
+    //选中的部分移动
+    $('bt3').onclick = function () {
+        for (i = 0; i < len; i++) {
+            var opt = sel.children[i];
+            if (opt.selected) {
+                sel1.appendChild(opt);
+                i--;
+            }
+        }
+    }
+    // 选中的部分删除
+    $('bt4').onclick = function () {
+        for (i = 0; i < sel1.children.length; i++) {
+            var opt = sel1.children[i];
+            if (opt.selected) {
+                sel.appendChild(opt);
+                i--;
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

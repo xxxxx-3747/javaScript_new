@@ -50,3 +50,25 @@ function getLastElementChild(parent) {
     }
     return null;
 }
+
+// 注册事件兼容性问题
+function addEventListener(element, eventName, callback) {
+    if (element.addEventListener) {
+        element.addEventListener(eventName, callback, false);
+    } else if (element.attachEvent) {
+        element.attachEvent('on' + eventName, callback);
+    } else {
+        element['on' + eventName] = callback;
+    }
+}
+
+// 移除事假兼容性问题
+function removeEventListener(element, eventName, callback) {
+    if (element.removeEventListener) {
+        element.removeEventListener(eventName, callback, false);
+    } else if (element.detachEvent) {
+        element.detachEvent('on' + eventName, callback);
+    } else {
+        element['on' + eventName] = '';
+    }
+}

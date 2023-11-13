@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box" id="box"></div>
+<script src="common.js"></script>
+<script src="createTable.js"></script>
+<script>
+    var headDate = ['姓名', '课程', '成绩', '操作'];
+    var boxObj = document.getElementById('box');
+    var table = createHead(boxObj, headDate);
+
+    var bodyData = [
+        {name: 'zs', class: '语文', grade: '90'},
+        {name: 'ls', class: '语文', grade: '70'},
+        {name: 'ww', class: '语文', grade: '30'},
+        {name: 'zs', class: '数学', grade: '60'},
+        {name: 'ls', class: '数学', grade: '22'},
+        {name: 'ww', class: '数学', grade: '45'},
+        {name: 'zs', class: '体育', grade: '100'}
+    ];
+    createBody(table, bodyData);
+</script>
+
+
+</body>
+</html>

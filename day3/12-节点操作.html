@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li>1111</li>
+        <li>2222</li>
+        <li>3333</li>
+        <li>4444</li>
+        <li>5555</li>
+    </ul>
+</div>
+
+<script src="common.js"></script>
+<script>
+    var box = document.getElementById('box');
+    var ulObj = box.querySelector('ul');
+    var list = ulObj.querySelectorAll('li');
+
+    // 在第三个li之后添加元素
+    // var newli=document.createElement('li');
+    // newli.innerHTML='xxxx';
+    // ulObj.insertBefore(newli,ulObj.children[3]);
+
+    //替换元素
+    // var newli=document.createElement('li');
+    // newli.innerHTML='xxxx';
+    // ulObj.replaceChild(newli,ulObj.children[3]);
+
+    // 删除ul中所有的li
+    for (var i = 0, len = list.length; i < len; i++) {
+        var li = ulObj.children[0];
+        ulObj.removeChild(li);
+    }
+
+    var newli = document.createElement('li');
+    newli.innerHTML = 'xxxx';
+    ulObj.appendChild(newli);
+
+</script>
+
+</body>
+</html>
