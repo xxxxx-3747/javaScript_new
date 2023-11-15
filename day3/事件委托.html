@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="ul">
+    <li>这是第一个li</li>
+    <li>这是第二个li</li>
+    <li>这是第三个li</li>
+    <li>这是第四个li</li>
+    <li>这是第五个li</li>
+</ul>
+
+<script src="common.js"></script>
+<script>
+    var ulObj=document.getElementById('ul');
+    ulObj.onclick=function (e) {
+        for(var i=0;i<ulObj.children.length;i++){
+            var liObj=ulObj.children[i];
+            liObj.style.backgroundColor='';
+        }
+        e.target.style.backgroundColor='red';
+    }
+</script>
+
+</body>
+</html>

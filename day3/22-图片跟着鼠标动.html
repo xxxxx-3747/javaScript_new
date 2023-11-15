@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<img src="images/cat.jpg" alt="" id="cat">
+<script src="common.js"></script>
+<script>
+    var catObj=document.getElementById('cat');
+    catObj.style.width='70px';
+    document.onmousemove=function (e) {
+        catObj.style.position='absolute';
+        var X=getPage(e).pageX;
+        var Y=getPage(e).pageY;
+        catObj.style.left=(X-35)+'px';
+        catObj.style.top=(Y-35)+'px';
+    }
+
+
+</script>
+
+</body>
+</html>

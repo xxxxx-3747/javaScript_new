@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dv {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="dv">
+
+</div>
+
+<script src="common.js"></script>
+<script>
+    var dvObj=$('dv');
+    dvObj.onmousemove=function (e) {
+        var scrollX=getPage(e).pageX;
+        var scrollY=getPage(e).pageY;
+        // console.log(scrollX);
+        // console.log(scrollY);
+
+        // console.log(e.offsetX);
+        // console.log(e.offsetY);
+
+        //获取鼠标在盒子里面的位置
+        var x=scrollX-e.offsetX;
+        var y=scrollY-e.offsetY;
+        console.log(x);
+        console.log(y);
+    }
+</script>
+
+</body>
+</html>
