@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+请阅读相关内容
+。。。。
+
+<br>
+<input type="button" id="btn" value="同意(请仔细阅读10秒)" disabled="disabled">
+
+<script src="common.js"></script>
+<script>
+    var time=10;
+    var timeId=setInterval(function () {
+        time--;
+        $('btn').value='同意(请仔细阅读'+time+'秒)';
+        if(time<=0){
+            $('btn').disabled=false;
+            $('btn').value='同意';
+            clearInterval(timeId);
+        }
+    },1000);
+</script>
+
+</body>
+</html>

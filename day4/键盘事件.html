@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="txt">
+
+<script src="common.js"></script>
+
+<script>
+    // window.onkeydown = function (e) {
+    //     e = e || window.event;
+    //     console.log(e.keyCode);
+    // }
+
+    $('txt').onkeydown = function (e) {
+        e = e || window.event;
+        if (e.keyCode == 65) {
+            return false;
+        }
+    }
+</script>
+
+</body>
+</html>

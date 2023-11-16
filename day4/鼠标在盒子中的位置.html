@@ -21,22 +21,23 @@
 
 <script src="common.js"></script>
 <script>
-    var dvObj=$('dv');
-    dvObj.onmousemove=function (e) {
-        var scrollX=getPage(e).pageX;
-        var scrollY=getPage(e).pageY;
-        // console.log(scrollX);
-        // console.log(scrollY);
+    var dvObj = $('dv');
+    dvObj.onmousemove = function (e) {
+        e = e || window.event;
+        var pageX = getPage(e).pageX;
+        var pageY = getPage(e).pageY;
 
-        // console.log(e.offsetX);
-        // console.log(e.offsetY);
+        var offsetX=this.offsetLeft;
+        var offsetY=this.offsetTop;
 
-        //获取鼠标在盒子里面的位置
-        var x=scrollX-e.offsetX;
-        var y=scrollY-e.offsetY;
+        var x=pageX-offsetX;
+        var y=pageY-offsetY;
+
         console.log(x);
         console.log(y);
+
     }
+
 </script>
 
 </body>

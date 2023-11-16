@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dv {
+            width: 100px;
+            height: 100px;
+            background-color: cornflowerblue;
+            position: absolute;
+            /*margin-left: 500px;*/
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="开始" id="btn">
+<div id="dv"></div>
+
+<script src="common.js"></script>
+<script>
+    $('btn').onclick=function () {
+        var current=$('dv').offsetLeft;
+        var timeId=setInterval(function () {
+            current+=8;
+            $('dv').style.left=current+'px';
+            if(current>=500){
+                clearInterval(timeId);
+                $('dv').style.left='500px';
+            }
+
+        },30);
+    }
+
+</script>
+
+</body>
+</html>

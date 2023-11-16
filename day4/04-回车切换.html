@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+
+<script src="common.js"></script>
+<script>
+
+    var inputs = document.querySelectorAll('input');
+    //回车键的key是13
+    // window.onkeydown=function (e) {
+    //     console.log(e.keyCode);
+    // }
+    for(var i=0,len=inputs.length;i<len;i++){
+        var inputObj=inputs[i];
+        inputObj.onkeydown = function (e) {
+            if (e.keyCode === 13) {
+                if(this.nextElementSibling){
+                    this.nextElementSibling.nextElementSibling.focus();
+                }
+            }
+        }
+    }
+
+
+    console.log(inputs);
+</script>
+</body>
+</html>
