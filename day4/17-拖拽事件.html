@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #d_box {
+            margin: 3px;
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000000;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, .2);
+            position: absolute;
+            left: 40%;
+            top: 30%;
+
+            /*不让文字选中*/
+            user-select: none;
+
+        }
+
+        #d_box #hd {
+            font-size: 15px;
+            background-color: cornflowerblue;
+            height: 30px;
+            line-height: 30px;
+            padding: 5px;
+            cursor: move;
+
+        }
+
+        #d_box #hd #box_close {
+            /*font-size: 10px;*/
+            float: right;
+            text-align: center;
+            height: 100%;
+        }
+    </style>
+    <script src="common.js"></script>
+</head>
+<body>
+
+<div id="d_box" class="d_box">
+    <div id="hd" id="drop">注册信息（可以拖拽）
+        <span id="box_close">【关闭】</span>
+    </div>
+    <div id="bd"></div>
+</div>
+
+<script>
+    var d_box = document.getElementById('d_box');
+    var hd = document.getElementById('hd');
+    var bd = document.getElementById('bd');
+
+    //注册鼠标点击事件
+    hd.onmousedown = function (e) {
+        //获取鼠标距离盒子的位置
+        //1.获取鼠标距离页面的位置
+        var pageX = getPage(e).pageX;
+        var pageY = getPage(e).pageY;
+        //获取盒子距离页面的位置
+        var boxX=d_box.offsetLeft;
+        var boxY=d_box.offsetTop;
+
+        var x=pageX-boxX;
+        var y=pageY-boxY;
+        document.onmousemove=function (e) {
+            //获取鼠标距离页面的新位置
+            var pageX_new = getPage(e).pageX;
+            var pageY_new = getPage(e).pageY;
+
+            var newX=pageX_new-x;
+            var newY=pageY_new-y;
+
+            d_box.style.left=newX+'px';
+            d_box.style.top=newY+'px';
+        }
+    }
+
+    //注册鼠标抬起事件
+    document.onmouseup=function () {
+        document.onmousemove=null;
+    }
+
+    //点击关闭，关闭盒子
+    $('box_close').onclick=function () {
+        $('d_box').style.display='none';
+    }
+
+</script>
+
+</body>
+</html>

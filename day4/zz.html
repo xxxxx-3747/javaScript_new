@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    // // 原始字符串
+    // const originalString = 'js http://minio.dev.pcep.cloud/chadbig1screen/xxxasd.png';
+    //
+    // // 正则表达式模式
+    // const regexPattern = /(http:\/\/.*\/)/;
+    //
+    // // 替换字符串
+    // const replacedString = originalString.replace(regexPattern, (match) => {
+    //     // 在匹配的字符串后添加///
+    //     return match + '///';
+    // });
+    //
+    // console.log(replacedString);
+    const originalUrl = 'http://minio.dev.pcep.cloud/chadbig1screen/xxxasd.png';
+    const replacedUrl = originalUrl.replace(/(http.*\/)(.*)/, '$1/$2');
+    console.log(replacedUrl);
+
+
+
+</script>
+</body>
+</html>
