@@ -26,6 +26,8 @@
             border: 1px solid #000000;
             box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
             position: absolute;
+            /*top: 0px;*/
+            /*left: 0px;*/
             top: 50%;
             left: 50%;
             transform: translateX(-50%) translateY(-50%);
@@ -164,6 +166,9 @@
     var bg = $('bg');
     var closeBtn = $('closeBtn');
     var title = $('title');
+    //页面的宽高
+    var documentX=window.innerWidth;
+    var documentY=window.innerHeight;
 
     // 点击按钮显示登录框和遮挡层
     link.onclick = function () {
@@ -192,12 +197,25 @@
             var new_x = getPage(e).pageX - x;
             var new_y = getPage(e).pageY - y;
             // console.log(new_x);
-            console.log(new_y);
+            // console.log(new_y);
             if (new_x < 250) {
                 new_x = 250;
             };
             if (new_y < 164) {
                 new_y = 164;
+            };
+
+            // console.dir(document);
+            console.log(documentX);
+            console.log(new_x);
+            console.log(new_y);
+            //
+            if(new_x>documentX-login.offsetWidth+230){
+                new_x=documentX-login.offsetWidth+230;
+            };
+
+            if(new_y>documentY-login.offsetHeight+140){
+                new_y=documentY-login.offsetHeight+140;
             };
 
             login.style.left = new_x + 'px';
@@ -210,6 +228,9 @@
 
         document.onmousemove = null;
     }
+
+
+
 
 </script>
 </body>
