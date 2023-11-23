@@ -14,13 +14,13 @@ var big = $('big');
 var bigimg = big.children[0];
 
 //注册鼠标进入事件
-small.onmouseover = function () {
+small.onmouseenter = function () {
     mask.style.display = 'block';
     big.style.display = 'block';
 }
 
 //注册鼠标离开事件
-small.onmouseout = function () {
+small.onmouseleave = function () {
     mask.style.display = 'none';
     big.style.display = 'none';
 }
