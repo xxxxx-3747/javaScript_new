@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: cornflowerblue;
+            margin-top: 5px;
+            position: absolute;
+        }
+
+    </style>
+</head>
+<body>
+<input type="button" value="按钮" id="btn">
+<div id="box"></div>
+
+<script src="common.js"></script>
+<script>
+    var box = $('box');
+    var btn = document.getElementById('btn');
+    var timeId=null;
+
+    btn.onclick = function () {
+        var target = 500;
+        //获取当前的位置
+        var current = box.offsetLeft;
+
+        var step = 5;
+
+        if(timeId != null){
+            clearInterval(timeId);
+        }
+
+        timeId = setInterval(function () {
+            if (current >= target) {
+                current = target;
+                box.style.left = current + 'px';
+                clearInterval(timeId);
+                return;
+            }
+            current += step;
+            box.style.left = current + 'px';
+
+        }, 20);
+    }
+
+</script>
+
+</body>
+</html>

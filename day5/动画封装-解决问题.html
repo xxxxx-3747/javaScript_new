@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: cornflowerblue;
+            margin-top: 5px;
+            position: absolute;
+        }
+
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: firebrick;
+            margin-top: 5px;
+            position: absolute;
+            top: 150px;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="移动到500" id="btn">
+<input type="button" value="移动到1000" id="btn1">
+<div id="box"></div>
+<div id="box1"></div>
+
+<script src="common.js"></script>
+<script>
+    var box = $('box');
+    var box1 = $('box1');
+    var btn = document.getElementById('btn');
+    var btn1 = document.getElementById('btn1');
+    // var timeId = null;
+
+    btn.onclick = function () {
+        animate(box, 500);
+        animate(box1, 500);
+    };
+
+    btn1.onclick = function () {
+        animate(box, 1000);
+        animate(box1, 1000);
+    };
+
+    function animate(element, target) {
+        // var target = 500;
+        //获取当前的位置
+        var current = element.offsetLeft;
+
+        var step = 5;
+
+        if (element.timeId != null) {
+            clearInterval(element.timeId);
+        }
+
+        element.timeId = setInterval(function () {
+            if (current > target) {
+                step = -Math.abs(step);
+            }
+
+            if (Math.abs(current - target) <= Math.abs(step)) {
+                element.style.left = target + 'px';
+                clearInterval(element.timeId);
+                return;
+            }
+            current += step;
+            element.style.left = current + 'px';
+
+        }, 20);
+
+    }
+
+</script>
+
+</body>
+</html>
