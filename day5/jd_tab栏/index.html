@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .message{
+            width: 260px;
+            height: 150px;
+            border: 1px solid black;
+            position: relative;
+            top: 50px;
+            left: 100px;
+        }
+        .message .message_menu{}
+        .message .message_menu .menu_l{}
+        .message .message_menu .menu_l i{
+            display: block;
+            width: 2px;
+            height: 20px;
+            background-color: rgba(0,0,0,.3);
+            position: absolute;
+            top: 5px;
+            left: 55px;
+        }
+        .message .message_menu .menu_l a{
+            display: block;
+            width: 50px;
+            height: 30px;
+
+            text-decoration: none;
+            color: black;
+            float: left;
+            margin-left: 5px;
+            line-height: 30px;
+            text-align: center;
+        }
+        .message .message_menu .menu_l .jd_line{}
+        .message .message_menu .menu_r{}
+        .message .message_menu .menu_r a{
+            display: block;
+            width: 80px;
+            height: 30px;
+            /*background-color: rgba(0,0,0,.3);*/
+            text-decoration: none;
+            color: black;
+            float: right;
+            line-height: 30px;
+            text-align: center;
+        }
+        .message .message_content{
+            margin-top: 40px;
+            margin-left: 10px;
+
+        }
+        .message .message_content ul{
+            display: none;
+        }
+        .message .message_content ul.current{
+            display: block;
+        }
+        .message .message_content ul li{
+            margin-bottom: 5px;
+            list-style-type: none;
+
+        }
+        .message .message_content ul li a{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<div class="message">
+  <div class="message_menu">
+    <div class="menu_l fl">
+        <a href="#">促销</a>
+        <i></i>
+        <a href="#">公告</a>
+        <div class="jd_line"></div>
+    </div>
+      <div class="menu_r fr">
+          <a href="#">更多>></a>
+      </div>
+  </div>
+  <div class="message_content">
+      <ul class="current">
+          <li><a href="javaScript:void(0)">折扣啦，打折啦！！！开心啊！！</a></li>
+          <li><a href="javaScript:void(0)">折扣啦，打折啦！！！开心啊！！</a></li>
+          <li><a href="javaScript:void(0)">折扣啦，打折啦！！！开心啊！！</a></li>
+          <li><a href="javaScript:void(0)">折扣啦，打折啦！！！开心啊！！</a></li>
+      </ul>
+      <ul>
+          <li><a href="javaScript:void(0)">放假啦，开心</a></li>
+          <li><a href="javaScript:void(0)">放假啦，开心</a></li>
+      </ul>
+  </div>
+</div>
+
+</body>
+</html>
