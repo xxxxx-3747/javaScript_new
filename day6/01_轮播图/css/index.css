@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+
+    /*width: 410px;*/
+    width: 400px;
+    height: 400px;
+    position: relative;
+    top: 100px;
+    left: 200px;
+    /*margin: 100px auto;*/
+    padding: 7px;
+    border: 1px solid black;
+
+}
+
+.screen {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.screen ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2500px;
+}
+
+.screen ul li {
+    width: 400px;
+    height: 400px;
+    list-style: none;
+    float: left;
+    padding: 7px;
+}
+
+.box .screen ol {
+    position: relative;
+    top: 365px;
+    float: right;
+
+}
+
+.screen ol li {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    list-style: none;
+    float: left;
+    text-align: center;
+    line-height: 30px;
+    margin-left: 5px;
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+.screen ol li.current {
+    background-color: cornflowerblue;
+}
+
+#arr {
+    /*z-index: 10;*/
+    position: relative;
+    top: -245px;
+    display: none;
+}
+#arr #left{
+    width: 50px;
+    height: 50px;
+    /*z-index: 10;*/
+    position: absolute;
+    left: -7px;
+}
+
+#arr #right{
+    width: 50px;
+    height: 50px;
+    /*z-index: 10;*/
+    position: relative;
+    left: 356px;
+}
+#arr span {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, .2);
+    border: 1px solid black;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+
