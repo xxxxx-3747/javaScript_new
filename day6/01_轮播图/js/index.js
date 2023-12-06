@@ -18,6 +18,10 @@ var right = document.querySelector('#right');
 var i = 0, len = li.length;
 var moveWidth = 0;
 var index = 0;
+//设置一个定时器
+var timeId = null;
+//定时移动的时间
+var time=2000;
 
 
 //获取相框的宽度
@@ -40,13 +44,35 @@ for (; i < len; i++) {
 
     //点击箭头，图片跟着改变
     right.onclick = function () {
+        //图片在最后一张的时候
+        if (index === len) {
+            //设置ul的样式
+            index = 0;
+            ul.style.left = '0px';
+        }
+
         index++;
         if (index < len) {
             ol.children[index].click();
+        } else {
+            //以动画的方式切换到克隆的最后一张图片
+            animate(ul, -index * (screenWidth + 14));
+
+            //设置序号的样式
+            for (i = 0; i < len; i++) {
+                ol.children[i].className = '';
+            }
+            ol.children[0].className = 'current';
+
+
         }
 
     }
     left.onclick = function () {
+        if (index === 0) {
+            index = len;
+            ul.style.left = -(index * (screenWidth + 14)) + 'px';
+        }
         index--;
         if (index >= 0) {
             ol.children[index].click();
@@ -54,18 +80,31 @@ for (; i < len; i++) {
     }
 }
 
+//克隆一个元素加在ul的最后
+var cloneLi = ul.children[0].cloneNode(true);
+ul.appendChild(cloneLi);
+
 //注册鼠标进入事件
 box.onmouseenter = function () {
     arr.style.display = 'block';
 
-    //注册鼠标点击事件
-    // left.onclick = function () {
-    // }
+    //清除定时器
+    clearInterval(timeId);
 }
 
 box.onmouseleave = function () {
     arr.style.display = 'none';
+
+    //设置定时任务
+    timeId=setInterval(function () {
+        right.click();
+    },time);
 }
+
+//设置定时器定时移动
+timeId=setInterval(function () {
+    right.click();
+},time);
 
 
 function lisClick() {
@@ -73,8 +112,9 @@ function lisClick() {
         ol.children[i].className = '';
     }
     this.className = 'current';
-    moveWidth = (screenWidth+14) * this.index;
+    moveWidth = (screenWidth + 14) * this.index;
     animate(ul, -moveWidth);
+    index = this.index;
 }
 
 
