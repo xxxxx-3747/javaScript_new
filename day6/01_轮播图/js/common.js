@@ -90,3 +90,10 @@ function getPage(e) {
         pageY: e.clientY + getScroll().scrollTop
     }
 }
+
+//获取min~max之间的随机整数
+function getRandom(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}

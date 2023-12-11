@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function Student(name, age, score) {
+        this.name = name;
+        this.age = age;
+        this.score = score;
+    }
+
+    Student.prototype.sayHi = function () {
+        console.log('我的名字是' + this.name + '，我的性别是' + this.sex);
+    }
+
+    Student.prototype.sex = '男';
+
+    var stu1 = new Student('zs', 18, 100);
+    var stu2 = new Student('ls', 28, 110);
+    stu1.sayHi();
+    stu2.sayHi();
+</script>
+
+</body>
+</html>
